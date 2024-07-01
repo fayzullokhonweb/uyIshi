@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-import { db } from "../firebase/firebaseConfige";
+import { db } from "../firebase/firebaseConfig";
 export let useCollection = (collectionName, whereData) => {
   let [data, setData] = useState(null);
 
