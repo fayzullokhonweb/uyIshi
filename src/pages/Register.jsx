@@ -13,7 +13,7 @@ export const action = async ({ request }) => {
 
 function Register() {
   const userData = useActionData();
-  const { register, isPending } = useRegister();
+  const { register, registerWithGoogle } = useRegister();
 
   useEffect(() => {
     if (userData) {
@@ -86,6 +86,7 @@ function Register() {
           </Form>
           <div className="max-w-lg w-full mx-auto">
             <button
+              onClick={registerWithGoogle}
               type="button"
               className="px-8 py-2.5 btn-block flex justify-center mx-auto items-center rounded text-[#333] text-sm tracking-wider font-semibold border-none outline-none shadow-lg bg-gray-50 hover:bg-gray-100 active:bg-gray-50"
             >

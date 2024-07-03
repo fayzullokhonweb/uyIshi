@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
 import { login } from "../app/userSlice";
 import { useDispatch } from "react-redux";
@@ -30,5 +35,19 @@ export const useRegister = () => {
     }
   };
 
-  return { isPending, register };
+  const registerWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      toast.success(`Welcome , ${user.displayName}`);
+      dispatch(login(user));
+    } catch (error) {
+      const errorMessage = error.message;
+      toast.error(error.message);
+    }
+  };
+
+  return { isPending, registerWithGoogle, register };
 };

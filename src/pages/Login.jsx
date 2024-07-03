@@ -51,12 +51,22 @@ function Login() {
                 </Link>
               </div>
               <div className="mt-10">
-                <button
-                  type="submit"
-                  className="w-full shadow-xl py-2.5 px-4 mb-5 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
-                >
-                  Sign in
-                </button>
+                {!isPending && (
+                  <button
+                    type="submit"
+                    className="w-full shadow-xl py-2.5 px-4 mb-5 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+                  >
+                    Sign in
+                  </button>
+                )}
+                {isPending && (
+                  <button
+                    type="submit"
+                    className="w-full shadow-xl py-2.5 px-4 mb-5 text-sm font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+                  >
+                    Loading
+                  </button>
+                )}
               </div>
             </Form>
             <div className="max-w-md mx-auto">

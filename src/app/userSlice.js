@@ -22,7 +22,7 @@ let userSlice = createSlice({
       userSlice.caseReducers.setLocal(state);
     },
     isAuthChange: (state, { payload }) => {
-      state.isAuthState = state;
+      state.isAuthState = payload;
       userSlice.caseReducers.setLocal(state);
     },
     setLocal: (state) => {
