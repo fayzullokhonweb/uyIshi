@@ -13,7 +13,7 @@ import { action as LoginAction } from "./pages/Login";
 import { action as RegisterAction } from "./pages/Register";
 
 // pages
-import { Home, About, Register, Login } from "./pages";
+import { Home, About, Register, Login, ResetPassword } from "./pages";
 
 // redux
 import { useSelector } from "react-redux";
@@ -49,6 +49,10 @@ function App() {
       path: "/register",
       element: user ? <Navigate to="/" /> : <Register />,
       action: RegisterAction,
+    },
+    {
+      path: "/reset",
+      element: user ? <Navigate to="/" /> : <ResetPassword />,
     },
   ]);
 

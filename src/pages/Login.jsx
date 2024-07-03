@@ -45,6 +45,11 @@ function Login() {
                 type="password"
                 placeholder="Enter password"
               />
+              <div className="text-right mt-2">
+                <Link to="/reset" className=" text-sm text-sky-600 font-medium">
+                  Forgot password ?
+                </Link>
+              </div>
               <div className="mt-10">
                 <button
                   type="submit"
