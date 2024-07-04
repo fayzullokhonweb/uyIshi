@@ -57,8 +57,8 @@ function Home() {
   };
 
   return (
-    <div className="align-element lg:flex justify-between mx-auto mt-10">
-      <div className="w-2/4">
+    <div className="align-element lg:flex lg:items-start items-center justify-between mx-auto mt-10">
+      <div className="w-full lg:w-2/4 mb-10 lg:mb-0">
         <Form
           method="post"
           className="max-w-md w-full mx-auto"
@@ -83,7 +83,9 @@ function Home() {
           </button>
         </Form>
       </div>
-      <TodoList data={data} className="w-2/4 flex" />
+      <div className="w-full lg:w-2/4 flex justify-center">
+        <TodoList data={data} className="w-full" />
+      </div>
     </div>
   );
 }
