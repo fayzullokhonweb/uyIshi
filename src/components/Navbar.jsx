@@ -7,7 +7,7 @@ function Navbar() {
   console.log(user);
   return (
     <header className="bg-base-200">
-      <nav className="align-element navbar max-w-6xl mx-auto px-10">
+      <nav className="align-element navbar  mx-auto">
         <div className="navbar-start">
           <h1>Navbar</h1>
         </div>

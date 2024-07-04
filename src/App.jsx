@@ -13,6 +13,7 @@ import MainLayout from "./layout/MainLayout";
 
 // action
 import { action as LoginAction } from "./pages/Login";
+import { action as HomeAction } from "./pages/Home";
 import { action as RegisterAction } from "./pages/Register";
 
 // pages
@@ -23,11 +24,9 @@ import { ProtectedRoutes } from "./components/ProtectedRoutes";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { login, isAuthChange } from "./app/userSlice";
+import { isAuthChange } from "./app/userSlice";
 
 // firebase
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase/firebaseConfig";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,6 +43,7 @@ function App() {
         {
           index: true,
           element: <Home />,
+          action: HomeAction,
         },
         {
           path: "/about",

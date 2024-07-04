@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Form, Link, useActionData } from "react-router-dom";
 import { FormEmail, FormPassword } from "../components";
 import { useLogin } from "../hooks/useLogin";
+import { useRegister } from "../hooks/useRegister";
 
 export const action = async ({ request }) => {
   let formData = await request.formData();
@@ -13,6 +14,7 @@ export const action = async ({ request }) => {
 function Login() {
   const userData = useActionData();
   const { loginUser, isPending } = useLogin();
+  const { isPending: isPendingUseRegister, registerWithGoogle } = useRegister();
 
   useEffect(() => {
     if (userData && userData.email && userData.password) {
@@ -71,6 +73,7 @@ function Login() {
             </Form>
             <div className="max-w-md mx-auto">
               <button
+                onClick={registerWithGoogle}
                 type="button"
                 className="px-8 py-2.5 btn-block flex justify-center mx-auto items-center rounded-full text-[#333] text-sm tracking-wider font-semibold border-none outline-none shadow-lg bg-gray-50 hover:bg-gray-100 active:bg-gray-50"
               >

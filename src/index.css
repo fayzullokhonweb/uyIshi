@@ -5,7 +5,6 @@
 
 @layer components {
   .align-element {
-    @apply max-w-7xl mx-auto pl-3
+    @apply max-w-7xl mx-auto px-5
   }
 }
-
